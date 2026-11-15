@@ -1,0 +1,17 @@
+{
+  "name": "ag-ui-local-poc",
+  "private": true,
+  "packageManager": "yarn@4.9.1",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:web": "yarn workspace @ag-ui-local-poc/web dev",
+    "dev:server": "yarn workspace @ag-ui-local-poc/server dev",
+    "typecheck": "yarn workspaces foreach -A run typecheck",
+    "build": "yarn workspaces foreach -A run build"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}

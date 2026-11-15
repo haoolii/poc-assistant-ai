@@ -1,0 +1,12 @@
+.yarn/cache
+.yarn/sdks/
+.yarn/unplugged/
+.yarn/install-state.gz
+.pnp.*
+!.pnp.cjs
+!.pnp.loader.mjs
+apps/server/.env
+apps/*/node_modules/
+dist
+*.tsbuildinfo
+.vscode/**/*

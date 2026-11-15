@@ -1,0 +1,24 @@
+{
+  "name": "@ag-ui-local-poc/server",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.0.1",
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "dotenv": "^16.5.0",
+    "fastify": "^5.3.2",
+    "openai": "^4.97.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.2",
+    "tsx": "4.19.3"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "@ag-ui-local-poc/web",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "typecheck": "tsc -b --pretty false"
+  },
+  "dependencies": {
+    "@ag-ui/client": "^1.0.4",
+    "@assistant-ui/generative-ui": "^0.0.11",
+    "@assistant-ui/react": "^0.15.36",
+    "@assistant-ui/react-ag-ui": "^0.1.10",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@assistant-ui/vite": "0.0.21",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react": "^4.4.1",
+    "vite": "^6.3.3"
+  }
+}
