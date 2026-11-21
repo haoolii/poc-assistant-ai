@@ -78,7 +78,7 @@ Generative UI 使用自訂元件，組合方式見 [選項元件指南](./GENERA
 </AgUiProvider>
 ```
 
-`reloadCase` 的型別為 `(caseId: string) => Promise<void>`；應重新取得對應案件並更新畫面，失敗時拋出錯誤。POC 已在 `App.tsx` 接入 `GET /cases/:caseId`。後端透過 MCP `update_case` 更新成功後明確送出 `refresh_case`；未提供 handler 或刷新失敗時，工具回傳 `success: false`。
+`reloadCase` 的型別為 `(caseId: string) => Promise<void>`；應重新取得對應案件並更新畫面，失敗時拋出錯誤。POC 已在 `apps/web/src/pages/case-workspace/ui/CaseWorkspacePage.tsx` 接入 `GET /cases/:caseId`。後端透過 MCP `update_case` 更新成功後明確送出 `refresh_case`；未提供 handler 或刷新失敗時，工具回傳 `success: false`。
 
 目前頁面的 `caseId` 由前端放入每次 `/agent` 的 `forwardedProps.caseId`。後端確認案件存在，並只允許更新這個案件；本 POC 的資料庫仍只有 `sample-0`。正式專案需另外驗證使用者對案件的存取權限。
 

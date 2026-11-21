@@ -67,7 +67,7 @@
 
 ### 前端 mapping
 
-`apps/web/src/providers/AgUiProvider.tsx` 以 `fromAgUiMessages(messages)` 將 AG-UI 歷史轉成 assistant-ui 訊息，再透過 `ExportedMessageRepository.fromArray(...)` 載入。相同 ID 的工具結果會關聯到原工具呼叫。API 回傳的是 AG-UI 格式，不是轉換後的 assistant-ui 內部格式。
+`apps/web/src/pages/case-workspace/ui/AgUiProvider.tsx` 以 `fromAgUiMessages(messages)` 將 AG-UI 歷史轉成 assistant-ui 訊息，再透過 `ExportedMessageRepository.fromArray(...)` 載入。相同 ID 的工具結果會關聯到原工具呼叫。API 回傳的是 AG-UI 格式，不是轉換後的 assistant-ui 內部格式。
 
 ## 執行 Agent
 

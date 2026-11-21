@@ -2,8 +2,8 @@ import { AuiConfig, AssistantRuntimeProvider, ExportedMessageRepository, Tools }
 import { fromAgUiMessages, useAgUiRuntime } from "@assistant-ui/react-ag-ui";
 import { HttpAgent, type Message } from "@ag-ui/client";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
-import generativeToolkit from "../components/generative-toolkit";
-import { RefreshCaseTool, type RefreshCase } from "../components/RefreshCaseTool";
+import generativeToolkit from "./generative-toolkit";
+import { RefreshCaseTool, type RefreshCase } from "./RefreshCaseTool";
 
 const config = AuiConfig({ tools: Tools({ toolkit: generativeToolkit }) });
 

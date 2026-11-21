@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
-import { ChatThread } from "./components/ChatThread";
-import { AgUiProvider } from "./providers/AgUiProvider";
+import { ChatThread } from "./ChatThread";
+import { AgUiProvider } from "./AgUiProvider";
 
 type CaseDetail = {
   id: string;
@@ -18,12 +18,11 @@ const labels: Record<string, string> = {
 };
 const currentCaseId = "sample-0";
 
-export function App() {
+export function CaseWorkspacePage() {
   const [item, setItem] = useState<CaseDetail | null>(null);
   const [error, setError] = useState<string | null>(null);
   const refreshCase = useCallback(async (caseId: string) => {
     try {
-      alert('refresh')
       if (caseId !== currentCaseId) throw new Error("無法刷新目前頁面以外的案件");
       const response = await fetch(`/cases/${encodeURIComponent(caseId)}`);
       if (!response.ok) throw new Error(`案件載入失敗 (${response.status})`);
