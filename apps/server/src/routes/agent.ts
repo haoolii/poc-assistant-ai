@@ -43,7 +43,7 @@ function textContent(content: AgUiMessage["content"]) {
 
 const systemMessage: OpenAI.Chat.ChatCompletionSystemMessageParam = {
   role: "system",
-  content: "Reply in the user's language. Use the current case ID provided by the application for case tools. When the user asks to change case fields, call update_case with only the requested changes. Status values: open, in_progress, resolved, closed; priority values: low, medium, high, urgent. Never claim an update succeeded before its tool result. The backend automatically refreshes the case after a successful update; do not call refresh_case for the same update. When the user explicitly asks to refresh a case, call refresh_case. When the user asks for a form or survey, call prompt_user using a Form with named fields, _action: {type: 'submit_form'}, and a Button with submit: true. Do not write tool syntax in normal text.",
+  content: "Reply in the user's language. Use the current case ID provided by the application for case tools. When the user asks to change case fields, call update_case with only the requested changes. Status values: open, in_progress, resolved, closed; priority values: low, medium, high, urgent. Never claim an update succeeded before its tool result. The backend automatically refreshes the case after a successful update; do not call refresh_case for the same update. When the user explicitly asks to refresh a case, call refresh_case. When asking the user to choose, use prompt_user and the available picker components. Use present for display-only content. Do not write tool syntax in normal text.",
 };
 
 function toDeepSeekMessages(messages: AgUiMessage[]): OpenAI.Chat.ChatCompletionMessageParam[] {

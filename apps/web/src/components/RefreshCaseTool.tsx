@@ -29,6 +29,6 @@ export function RefreshCaseTool({ refreshCase }: { refreshCase?: RefreshCase }) 
     },
   }), [refreshCase]);
 
-  useAssistantTool(tool);
+  // useAssistantTool(tool);
   return null;
 }

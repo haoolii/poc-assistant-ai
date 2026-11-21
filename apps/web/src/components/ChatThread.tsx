@@ -2,10 +2,7 @@ import {
   ComposerPrimitive,
   MessagePrimitive,
   ThreadPrimitive,
-  type ToolCallMessagePartComponent,
 } from "@assistant-ui/react";
-import { ToolActivity } from "./ToolActivity";
-import { PromptUserRender } from "./generative-toolkit";
 
 export function ChatThread() {
   return (
@@ -32,15 +29,8 @@ function UserMessage() {
 function AssistantMessage() {
   return (
     <MessagePrimitive.Root className="message message-assistant">
-      <MessagePrimitive.Content components={{ tools: { Override: ToolWithActivity } }} />
+      <MessagePrimitive.Parts />
       <div className="message-error"><MessagePrimitive.Error /></div>
     </MessagePrimitive.Root>
   );
 }
-
-const ToolWithActivity: ToolCallMessagePartComponent = (props) => (
-  <>
-    <ToolActivity {...props} />
-    {props.toolName === "prompt_user" && <PromptUserRender {...props} />}
-  </>
-);

@@ -1,19 +1,19 @@
 "use generative";
 
 import { defineToolkit } from "@assistant-ui/react";
-import { defaultGenerativeUILibrary, JSONGenerativeUI } from "@assistant-ui/generative-ui/react";
+import { JSONGenerativeUI } from "@assistant-ui/generative-ui/react";
+import { optionPickerComponents } from "./option-picker";
+import { actionPromptComponents } from "./action-prompt";
 
 const generative = new JSONGenerativeUI({
-  library: defaultGenerativeUILibrary,
-  // Return the user's input so prompt_user can complete and resume the conversation.
+  library: { ...optionPickerComponents, ...actionPromptComponents },
   actions: {
     has: () => true,
     dispatch: (action) => action.$input ?? action,
   },
 });
 
-export const PromptUserRender = generative.promptUser().render!;
-
 export default defineToolkit({
+  present: generative.present({ display: "standalone" }),
   prompt_user: generative.promptUser(),
 });

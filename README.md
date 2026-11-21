@@ -15,11 +15,11 @@ Fastify → MCP client → in-memory MCP server → case store
 ```
 
 - 文字串流、多輪對話及 AG-UI 工具呼叫。
-- 以 assistant-ui primitives 組合的聊天介面與工具呼叫狀態。
-- `@assistant-ui/generative-ui` 預設元件庫與互動表單。
+- 以 assistant-ui primitives 組合的聊天介面。
+- `@assistant-ui/generative-ui` 自訂元件與互動選項。
 - 前端 `refresh_case` 工具及可注入的案件刷新接點。
 - `sample-0` 案件存在 server 記憶體；左側顯示案件、右側透過 AI 對話更新。
-- 每次對話由後端呼叫 MCP `get_case_detail` 取得目前案件資料，對話中可展開查看工具參數與結果。
+- 每次對話由後端呼叫 MCP `get_case_detail` 取得目前案件資料。
 - 對話紀錄保存在後端記憶體，重啟後會清除。
 - Yarn 4 Plug'n'Play monorepo；不使用 `node_modules`。
 
@@ -65,7 +65,7 @@ DEEPSEEK_MODEL=qwen3:30b
 
 本機 Ollama 不需要 API key。模型的工具呼叫與 Generative UI 表現依模型而異。
 
-本專案直接使用套件的預設元件：`Diagram` 顯示 Mermaid 原始碼，`Map` 顯示地點連結清單，`Markdown` 顯示文字內容。
+Generative UI 使用自訂元件，組合方式見 [選項元件指南](./GENERATIVE_UI_PICKER_GUIDE.md)。
 
 ### 接入案件刷新
 
@@ -94,7 +94,7 @@ DEEPSEEK_MODEL=qwen3:30b
 ## 試用 Generative UI
 
 ```text
-請使用互動式表單幫我建立一份活動報名表，包含必填的姓名與電子郵件、上午場或下午場的場次選擇，以及選填的備註。請呼叫 prompt_user 顯示可填寫、可提交的表單，提交後摘要我的填寫內容。
+請用展示卡和選項列表讓我選擇晚餐，選擇後告訴我選了什麼。
 ```
 
 ## 開發指令
@@ -104,4 +104,4 @@ yarn typecheck
 yarn build
 ```
 
-本專案使用 Yarn PnP。若使用 VS Code，先執行 `yarn dlx @yarnpkg/sdks vscode` 產生本機 SDK，再透過 `TypeScript: Select TypeScript Version` 選擇 `Use Workspace Version`。`.yarnrc.yml` 的 `packageExtensions` 供嚴格 PnP 依賴解析使用。
+本專案使用 Yarn PnP。若使用 VS Code，先執行 `yarn dlx @yarnpkg/sdks@2.7.4 vscode` 產生本機 SDK，再透過 `TypeScript: Select TypeScript Version` 選擇 `Use Workspace Version`，並安裝 ZipFS 擴充功能以開啟套件原始碼。`.yarnrc.yml` 的 `packageExtensions` 供嚴格 PnP 依賴解析使用。
